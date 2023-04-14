@@ -67,21 +67,21 @@ int main() {
 }
 
 void heapify(int arr[], int n, int i) {
-    int largest = i;
-    int l = 2 * i + 1;
-    int r = 2 * i + 2;
+    int max = i;
+    int left = 2 * i + 1;
+    int right = 2 * i + 2;
 
-    if (l < n && arr[l] > arr[largest]) {
-        largest = l;
+    if (left < n && arr[left] > arr[max]) {
+        max = left;
     }
 
-    if (r < n && arr[r] > arr[largest]){
-        largest = r;
+    if (right < n && arr[right] > arr[max]){
+        max = right;
     }
 
-    if (largest != i) {
-        std::swap(arr[i], arr[largest]);
-        heapify(arr, n, largest);
+    if (max != i) {
+        std::swap(arr[i], arr[max]);
+        heapify(arr, n, max);
     }
 }
 
